@@ -1,0 +1,70 @@
+---
+title: "FML - 811308674"
+output: html_document
+date: "2023-09-10"
+---
+#part a importing data
+
+#datasource-https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries
+
+
+
+```{r}
+data<-read.csv("C:/Users/akhil/Downloads/ds_salaries.csv")
+data
+```
+#part b descriptive statistics for numeric variables 
+
+```{r}
+summary(data)
+
+mean(data$salary)
+
+
+median(data$salary)
+
+min(data$salary)
+
+max(data$salary)
+
+sd(data$salary)
+
+var(data$salary)
+
+str(data$salary)
+
+```
+#part c descriptive stats for categorical variables 
+
+```{r}
+table(data$experience_level)
+
+table(data$employment_type)
+
+data$experience_level
+
+str(data$employment_type)
+```
+#part d transforming variable 
+
+```{r}
+
+log(data$salary)
+
+log(data$remote_ratio)
+
+k<-data$salary-data$remote_ratio-sd(data$salary)/var(data$salary)
+
+k
+
+```
+#part e - plotting variable 
+```{r}
+hist(data$salary,main=" HISTOGRAM OF salary")
+
+```
+#part f scatterplot
+```{r}
+plot(data$salary,data$remote_ratio,main="scatterplot")
+```
+
